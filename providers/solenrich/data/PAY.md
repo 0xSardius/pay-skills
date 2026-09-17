@@ -17,7 +17,7 @@ context windows (`format: "llm"`), or both (`format: "both"`). All endpoints
 are POST to `/entrypoints/{key}/invoke` with a flat JSON body containing the
 parameters in the OpenAPI schema, e.g. `{ "mint": "...", "format": "llm" }`
 (a `{ "input": { ... } }` envelope is also accepted), and settle via x402
-(USDC on Solana or Base). 44 paid endpoints plus one free; prices range $0.001–$0.25 per call.
+(USDC on Solana or Base). 45 paid endpoints plus one free; prices range $0.001–$0.25 per call.
 
 What it offers, by task:
 
@@ -49,7 +49,8 @@ What it offers, by task:
   tax in the quote asset (xStocks, pre-stocks, ZEC). `stonk-gems` ranks every
   reward coin on recent payout, holders, turnover, and quote strength;
   `stonk-reward-risk` returns payout status (PAYING/STALE/NEVER) and the
-  round-trip tax cost; `stonk-screener` filters by live/paying; `stonk-launch-intel`
+  round-trip tax cost; `stonk-screener` filters by live/paying; `stonk-quote` prices one trade at one size
+  (tax + impact, breakeven, expected payout over the hold, PAYS/MARGINAL/COSTS); `stonk-launch-intel`
   says which quote asset to launch against; `stonk-launch-preflight` diffs a
   self-built LaunchLab transaction before broadcast; `stonk-pairs` is free.
 - **Natural language** — `query` routes a plain-English question to the right
